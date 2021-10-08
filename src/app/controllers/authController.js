@@ -3,7 +3,7 @@ const User = require('../models/User')
 const router = express.Router();
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const authconfig = require('../config/auth')
+const authconfig = require('../../config/auth.json')
 
 function generateToken(params={}){
     return jwt.sign(params, authconfig.secret, {expiresIn: 86400});  
